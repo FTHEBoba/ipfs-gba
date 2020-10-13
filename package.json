@@ -1,0 +1,52 @@
+{
+  "name": "dapple",
+  "version": "0.1.0",
+  "description": "lifetime royalties to artists and creators",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol",
+    "chain": "truffle console --network rinkeby",
+    "compile": "truffle compile"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run prettier:solidity"
+    }
+  },
+  "devDependencies": {
+    "@openzeppelin/gsn-provider": "^0.1.11",
+    "@openzeppelin/test-environment": "^0.1.5",
+    "@openzeppelin/test-helpers": "^0.5.6",
+    "bignumber.js": "^9.0.1",
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.3",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "ganache-cli": "^6.11.0",
+    "husky": "^4.3.0",
+    "prettier": "^2.1.2",
+    "prettier-plugin-solidity": "^1.0.0-alpha.58",
+    "solhint": "^3.2.1",
+    "solhint-plugin-prettier": "0.0.5",
+    "truffle": "^5.1.47",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FTHEBoba/dapple.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FTHEBoba/dapple/issues"
+  },
+  "homepage": "https://github.com/FTHEBoba/dapple#readme"
+}
