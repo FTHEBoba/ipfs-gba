@@ -4,13 +4,14 @@ module.exports = {
     node: true,
     es2020: true,
   },
-  extends: "eslint:recommended",
+  extends: ['eslint:recommended', 'plugin:mocha/recommended'],
   parserOptions: {
     ecmaVersion: 11,
-    sourceType: "module",
+    sourceType: 'module',
   },
   rules: {
-    semi: ["error", "always"],
-    quotes: ["error", "single"],
+    semi: ['error', 'always'],
+    quotes: ['error', 'single'],
   },
+  plugins: ['mocha'],
 };
