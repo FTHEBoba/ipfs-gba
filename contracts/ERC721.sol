@@ -393,14 +393,10 @@ contract ERC721 is
      *
      * Emits a {Transfer} event.
      */
-    function safeMint(
-        address to,
-        uint256 tokenId
-    ) external {
+    function safeMint(address to, uint256 tokenId) external {
         _safeMint(to, tokenId, "");
-	// set tokenURI with baseURI
+        // set tokenURI with baseURI
         // _setTokenURI(tokenId, _baseURI);
-
     }
 
     /**
@@ -434,7 +430,6 @@ contract ERC721 is
     function _mint(address to, uint256 tokenId) internal virtual {
         require(to != address(0), "ERC721: mint to the zero address");
         require(!_exists(tokenId), "ERC721: token already minted");
-
 
         _beforeTokenTransfer(address(0), to, tokenId);
 
