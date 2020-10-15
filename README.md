@@ -2,7 +2,7 @@
 
 lifetime royalties to the artist and creator
 
-#### Rinkeby contracs
+## Rinkeby contracs
 
 | Contract | Address                                    |
 | -------- | ------------------------------------------ |
