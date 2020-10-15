@@ -12,7 +12,6 @@ import "@openzeppelin/contracts/utils/EnumerableSet.sol";
 import "@openzeppelin/contracts/utils/EnumerableMap.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-
 /**
  * @title ERC721 Non-Fungible Token Standard basic implementation
  * @dev see https://eips.ethereum.org/EIPS/eip-721
@@ -591,5 +590,4 @@ contract ERC721 is
         address to,
         uint256 tokenId
     ) internal virtual {}
-
 }
