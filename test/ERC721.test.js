@@ -39,7 +39,7 @@ describe('ERC721', function () {
     expect(await this.ierc721_meta.symbol()).to.equal(symbol);
   });
 
-  it('can mint token', async function () {
+  it('can mint token && contains ipfs_hash', async function () {
     let tokenID = 0;
     await this.token.safeMint(alice, tokenID, {from: owner});
     expect(await this.ierc721_meta.tokenURI(tokenID)).to.equal(

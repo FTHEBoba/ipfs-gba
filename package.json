@@ -10,7 +10,8 @@
     "prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol",
     "chain": "truffle console --network rinkeby",
     "compile": "truffle compile",
-    "test": "truffle compile && mocha --exit --recursive test"
+    "test": "truffle compile && mocha --exit --recursive test",
+    "deploy": "truffle deploy --network rinkeby"
   },
   "husky": {
     "hooks": {
