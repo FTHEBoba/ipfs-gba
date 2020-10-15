@@ -8,6 +8,7 @@ const {
 } = require('@openzeppelin/test-helpers');
 const {expect} = require('chai');
 
+const Factory = contract.fromArtifact('Factory');
 const ERC721 = contract.fromArtifact('ERC721');
 const IERC721 = contract.fromArtifact('IERC721');
 const IERC721Metadata = contract.fromArtifact('IERC721Metadata');
@@ -19,9 +20,18 @@ describe('ERC721', function () {
   const ipfs_hash = 'QmPJD8k2Lawf6hEo79AjUGFU8xoZ6bNMjC12GM9AAPrA7v';
 
   beforeEach(async function () {
-    this.token = await ERC721.new(name, symbol, ipfs_hash, {from: owner});
-    this.ierc721 = await IERC721.at(this.token.address);
-    this.ierc721_meta = await IERC721Metadata.at(this.token.address);
+    this.factory = await Factory.new({from: owner});
+    const token = await this.factory.createToken(name, symbol, ipfs_hash, {
+      from: owner,
+    });
+    this.token_address = token.logs[0].args[2];
+    this.token = await ERC721.at(this.token_address);
+    this.ierc721 = await IERC721.at(this.token_address);
+    this.ierc721_meta = await IERC721Metadata.at(this.token_address);
+  });
+
+  it('create factory', async function () {
+    expect(await this.factory.owner()).to.equal(owner);
   });
 
   it('create token succ', async function () {
