@@ -1,4 +1,4 @@
-# dapple
+# IPFS-GBA
 
 play gba games from ipfs
 
