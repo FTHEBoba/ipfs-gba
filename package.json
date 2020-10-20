@@ -1,7 +1,7 @@
 {
-  "name": "dapple",
+  "name": "ipfs-gba",
   "version": "0.1.0",
-  "description": "lifetime royalties to artists and creators",
+  "description": "play gba games from ipfs",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"

@@ -1,6 +1,6 @@
 # dapple
 
-lifetime royalties to the artist and creator
+play gba games from ipfs
 
 ## Rinkeby contracs
 

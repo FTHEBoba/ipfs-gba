@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { useRoutes } from 'hookrouter';
 import { Provider } from 'react-redux';
@@ -12,6 +12,8 @@ import { Header, Footer, Layout } from './components/layout';
 import NotFound from './components/pages/NotFound';
 const Home = lazy(() => import('./components/pages/Home'));
 const Profile = lazy(() => import('./components/pages/Profile'));
+
+const infuraToken = 'a8ef668930b24552a052429794c2c6d3';
 
 const routes = {
     '/': () => <Home />,
