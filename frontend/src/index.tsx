@@ -1,6 +1,5 @@
-import React, { Suspense, lazy, useEffect } from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
-import { useRoutes } from 'hookrouter';
 import { Provider } from 'react-redux';
 
 import * as serviceWorker from './serviceWorker';
@@ -8,28 +7,21 @@ import * as serviceWorker from './serviceWorker';
 import store from './store';
 import './styles/build/index.css';
 import LoadingSpinner from './components/core/LoadingSpinner';
-import { Header, Footer, Layout } from './components/layout';
-import NotFound from './components/pages/NotFound';
+import { Header, Footer } from './components/layout';
+import { UseWalletProvider } from 'use-wallet';
 const Home = lazy(() => import('./components/pages/Home'));
-const Profile = lazy(() => import('./components/pages/Profile'));
-
-const infuraToken = 'a8ef668930b24552a052429794c2c6d3';
-
-const routes = {
-    '/': () => <Home />,
-    '/profile': () => <Profile />,
-};
 
 function Root() {
-    const routeResult = useRoutes(routes);
     return (
-        <Provider store={store}>
-            <Header />
-            <Suspense fallback={<LoadingSpinner />}>
-                <Layout>{routeResult || <NotFound />}</Layout>
-            </Suspense>
-            <Footer />
-        </Provider>
+        <UseWalletProvider chainId={4} connectors={{}}>
+            <Provider store={store}>
+                <Header />
+                <Suspense fallback={<LoadingSpinner />}>
+                    <Home />
+                </Suspense>
+                <Footer />
+            </Provider>
+        </UseWalletProvider>
     );
 }
 

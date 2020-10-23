@@ -1,3 +1,4 @@
 export default {
-    LOGIN: 'user/LOGIN',
+    CONNECT: 'user/CONNECT',
+    DISCONNECT: 'user/DISCONNECT',
 };

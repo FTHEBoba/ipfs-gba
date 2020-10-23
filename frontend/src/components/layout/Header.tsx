@@ -1,16 +1,17 @@
 import React from 'react';
 import { Container } from '../core';
-import { A } from 'hookrouter';
+import Account from './Account';
 
 export default function Header() {
     return (
-        <Container className={'h-20 fixed top-0 bg-gray-800 text-white'}>
-            <A className='mx-2' href='/'>
-                Home
-            </A>
-            <A className='mx-2' href='/profile'>
-                Profile
-            </A>
+        <Container className={'justify-between'}>
+            <div>
+                <a className='text-2xl italic font-bold ' href='/'>
+                    IPFS-GBA
+                </a>
+                <span className='ml-2 text-sm italic text-orange-500'>Rinkeby</span>
+            </div>
+            <Account />
         </Container>
     );
 }

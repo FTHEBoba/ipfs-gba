@@ -55,6 +55,7 @@
   },
   "homepage": "https://github.com/FTHEBoba/dapple#readme",
   "dependencies": {
+    "create-react-class": "^15.7.0",
     "ipfs": "^0.50.2"
   }
 }
